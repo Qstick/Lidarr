@@ -271,6 +271,7 @@
     <Compile Include="MetadataSource\SkyHook\SkyHookProxySearchFixture.cs" />
     <Compile Include="MetadataSource\SearchArtistComparerFixture.cs" />
     <Compile Include="MetadataSource\SkyHook\SkyHookProxyFixture.cs" />
+    <Compile Include="MusicTests\EntityFixture.cs" />
     <Compile Include="MusicTests\AlbumServiceFixture.cs" />
     <Compile Include="MusicTests\AddArtistFixture.cs" />
     <Compile Include="MusicTests\AlbumMonitoredServiceTests\AlbumMonitoredServiceFixture.cs" />
@@ -280,6 +281,8 @@
     <Compile Include="MusicTests\ArtistServiceTests\UpdateMultipleArtistFixture.cs" />
     <Compile Include="MusicTests\ArtistServiceTests\FindByNameInexactFixture.cs" />
     <Compile Include="MusicTests\RefreshAlbumServiceFixture.cs" />
+    <Compile Include="MusicTests\RefreshAlbumReleaseServiceFixture.cs" />
+    <Compile Include="MusicTests\RefreshTrackServiceFixture.cs" />
     <Compile Include="MusicTests\ShouldRefreshAlbumFixture.cs" />
     <Compile Include="NotificationTests\NotificationBaseFixture.cs" />
     <Compile Include="NotificationTests\SynologyIndexerFixture.cs" />
@@ -622,6 +625,7 @@
     <PackageReference Include="Unity">
       <Version>4.0.1</Version>
     </PackageReference>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
