@@ -15,6 +15,8 @@ namespace NzbDrone.Integration.Test
             config.LogLevel = "Trace";
             HostConfig.Put(config);
 
+            Thread.Sleep(500);
+
             var logFile = Path.Combine(_runner.AppData, "logs", "Lidarr.trace.txt");
             var logLines = File.ReadAllLines(logFile);
 
