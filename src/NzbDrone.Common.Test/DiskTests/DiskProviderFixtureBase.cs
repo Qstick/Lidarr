@@ -247,12 +247,16 @@ namespace NzbDrone.Common.Test.DiskTests
         [Test]
         public void should_not_be_able_to_rename_open_hardlinks_with_fileshare_none()
         {
+            WindowsOnly();
+
             Assert.Throws<IOException>(() => DoHardLinkRename(FileShare.None));
         }
 
         [Test]
         public void should_not_be_able_to_rename_open_hardlinks_with_fileshare_write()
         {
+            WindowsOnly();
+
             Assert.Throws<IOException>(() => DoHardLinkRename(FileShare.Read));
         }
     }
