@@ -3,6 +3,7 @@ using System.Linq;
 using NLog;
 using NLog.Config;
 using NzbDrone.Common.Extensions;
+using NzbDrone.Common.Instrumentation;
 using NzbDrone.Core.Configuration;
 using NzbDrone.Core.Configuration.Events;
 using NzbDrone.Core.Messaging.Events;
@@ -41,6 +42,11 @@ namespace NzbDrone.Core.Instrumentation
             SetMinimumLogLevel(rules, "appFileTrace", minimumLogLevel <= LogLevel.Trace ? LogLevel.Trace : LogLevel.Off);
 
             LogManager.ReconfigExistingLoggers();
+
+            if (!_configFileProvider.AnalyticsEnabled)
+            {
+                NzbDroneLogger.UnRegisterRemoteLoggers();
+            }
         }
 
         private void SetMinimumLogLevel(IList<LoggingRule> rules, string target, LogLevel minimumLogLevel)

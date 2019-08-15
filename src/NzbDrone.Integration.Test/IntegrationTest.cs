@@ -38,8 +38,10 @@ namespace NzbDrone.Integration.Test
             });
 
             // Change Console Log Level to Debug so we get more details.
+            // Disable sentry so we don't get events for unreleased code.
             var config = HostConfig.Get(1);
             config.ConsoleLogLevel = "Debug";
+            config.AnalyticsEnabled = false;
             HostConfig.Put(config);
         }
 
