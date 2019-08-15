@@ -279,7 +279,7 @@ stages:
           testResultsFormat: 'NUnit'
           testResultsFiles: '**/TestResult.xml'
           testRunTitle: '$(osName) Unit Tests'
-          failTaskOnFailedTests: ne(variables['osName'], 'Mac')
+          failTaskOnFailedTests: $[ne(variables['osName'], 'Mac')]
 
   - stage: Integration_Automation
     displayName: Integration / Automation
@@ -413,7 +413,7 @@ stages:
           testResultsFormat: 'NUnit'
           testResultsFiles: '**/TestResult.xml'
           testRunTitle: '$(osName) Automation Tests'
-          failTaskOnFailedTests: ne(variables['osName'], 'Mac')
+          failTaskOnFailedTests: $[ne(variables['osName'], 'Mac')]
         displayName: Publish Test Results
 
   - stage: Analyze
